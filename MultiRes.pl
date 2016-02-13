@@ -35,21 +35,29 @@ sub main
 	@writefiles = ();
 	for $k (@kmerlists)
 	{
+		chomp($k);
+		print "$k\n";
 		$writefile = $k;
 		$writefile =~ s/solid_kmers_binary.//;
+		print "Writing kmer counts of $k to $writefile\n";
 		push @writefiles, $writefile;
-		system("multi-dsk/parse_results $k > $writefile");
+		$cmd = `python multi-dsk/parse_results.py $k > $writefile`;
+		$cmd = `rm $k`;
 	}
+	# Clean up temporary files from multi-dsk
+	$cmd = `rm write_counts.txt`;
+	$cmd = `rm *reads_binary`;
+	
 	# Convert the k-mer counts into features that can be used by classifier
-	system("perl featureset.pl -k1 $writefiles[2] -k2 $writefiles[1] -k3 $writefiles[0] -t $upper_threshold >featuresset.txt");
+	$cmd  = `perl featureset.pl -k1 $writefiles[2] -k2 $writefiles[1] -k3 $writefiles[0] -t $upper_threshold >featuresset.txt`;
 	
 	# Classify k-mers as erroneous or rare variants 
-	system("python PredictErrorCorrection1.py train1_models_pkl/RandomForset.pkl featuresset.txt errorcorrect.temp");
+	system("python PredictErrorCorrection1.py train1_models_pkl/RandomForest.pkl featuresset.txt errorcorrect.temp");
 	
 	# Combine all predicted rare variants and normal k-mers
 	
 	system("perl parse_pred.pl errorcorrect.temp $writefiles[2] $upper_threshold > $outputfile");
-
+	print "Error correction completed successfully, results are stored in $outputfile\n";
 }
 
 
