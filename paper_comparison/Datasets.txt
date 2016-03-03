@@ -1,0 +1,14 @@
+3 datasets were used for evaluation in the paper.
+1. 11poptot.fasta : A simulated data containing 11 strains of HIV-1 sequence (9181 kb) in length. 10 of these strains are generated from a single HIV-1 reference sequence by introducing random mutations on it. 
+2. HCV virus sequences: The E1/E2 region of the Hepatitis C Virus was used to generate two datasets:
+	One contained 36 HCV strains found in different patients, and reads were simulated from it. 
+[Source: Hussein, N., Zekri, A.-R.N., Abouelhoda, M., El-din, H.M.A., Ghamry, A.A., Amer, M.A., Bahnassy, A.A., et al.: New insight into hcv e1/e2 region of genotype 4a. Virology journal 11(1), 2512 (2014)]
+
+	Second contained 44 HCV strains found in a patient
+	(Thanks to Serghei Mangul for the data)
+[Source: Skums, P., Dimitrova, Z., Campo, D.S., Vaughan, G., Rossi, L., Forbi, J.C., Yokosawa, J., Zelikovsky, A.,Khudyakov, Y.: E1cient error correction for next-generation sequencing of viral amplicons. BMC bioinformatics 13(Suppl 10), 6 (2012) ]
+
+3. 5 HIV-1 laboratory mixture: A laboratory mixture of 5 HIV-1 strains. 
+	Source:
+	[https://github.com/cbg-ethz/5-virus-mix] 
+

@@ -1,0 +1,31 @@
+This file explains the parameter Settings and commands used for comparing our results to existing de novo error correction tools
+
+
+BLESS error correction tool (Version 0.15, Date May 16, 2014)
+Command used: 
+bless -read <fastafile> -prefix dataset -kmerlength 35
+
+
+Quake error correction tool (Last update Feb 2012)
+Usage : 
+./quake.py -r <fastqfile> -k 13 --no_count  
+
+
+BayesHammer error correction (SPAdes version: 3.6.2)
+BayesHammer was run as a part of spades assembly pipeline. The error corrected reads in the folder corrected were used for comparison and analysis. File location : ./corrected/*.cor.fastq.gz inside the directory created by spades
+Command used: 
+/spades.py -s <fastqfile> -o <directory>
+
+
+SEECER Error Correction (Version 0.1.3) 
+USAGE: 
+bash ./bin/run_seecer.sh <fastq1> <fastq2>  
+
+from the seecer's installed directory. 
+
+
+BFC Error correction (Downloaded October 2015)
+USAGE: 
+bfc -s 10000 -t8 "fastqfile" > "correctedfile"
+
+
