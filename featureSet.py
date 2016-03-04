@@ -1,5 +1,7 @@
 import sys
 from collections import defaultdict
+# Python version for featureset generation using two pases
+# First load the 23-mers and then in the second pass load the 13-mers
 
 #print sys.argv[1]
 

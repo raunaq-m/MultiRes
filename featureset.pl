@@ -23,7 +23,6 @@ $L3 = loadkmerhash($k4) if $k4 ne "";
 $L4 = loadkmerhash($k5) if $k5 ne "";
 
 %truehash = ();
-# Load status of kmers as true or false in the training mode. 
 loadtruehash() if $truefile ne "";
 
 
@@ -31,7 +30,7 @@ loadtruehash() if $truefile ne "";
 #print "#$L1 $L2 \n";
 
 featureset($k1,$L1,$L2,$threshold);
-# featureset_5($k1,$L1,$L2,$L3,$L4, $threshold); 
+#featureset_5($k1,$L1,$L2,$L3,$L4, $threshold); 
 
 sub loadtruehash
 {
