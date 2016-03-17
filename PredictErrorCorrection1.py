@@ -19,6 +19,9 @@ import time
 def main():
 	# load the testing file and the model 
 	start_time = time.time()
+	if(len(sys.argv)<2):
+		print "USAGE: python PredictErrorCorrection1.py modelfile kmerfile outputfile\n"
+		sys.exit()	 
 	modelfile = sys.argv[1]
 	print modelfile
 	model = joblib.load(modelfile)

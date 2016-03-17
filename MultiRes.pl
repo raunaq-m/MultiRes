@@ -62,6 +62,7 @@ sub main
 	# Combine all predicted rare variants and normal k-mers
 	
 	system("perl parse_pred.pl $dirname/errorcorrect.temp $writefiles[2] $upper_threshold > $outputfile");
+	# Use error-corrected 35-mers for predicting error correct \kmerstart 
 	print "Error correction completed successfully, results are stored in $outputfile\n";
 }
 
