@@ -61,9 +61,9 @@ sub main
 	print "Running ErrorCorrection Prediction:\npython PredictErrorCorrection1.py train1_models_pkl/RandomForest.pkl $dirname/featuresset.txt $dirname/errorcorrect.temp\n";
 	# Combine all predicted rare variants and normal k-mers
 	
-	system("perl parse_pred.pl $dirname/errorcorrect.temp $writefiles[2] $upper_threshold > $outputfile");
+	system("perl parse_pred.pl $dirname/errorcorrect.temp $writefiles[2] $upper_threshold > $dirname/MultiResCorrected.35");
 	# Use error-corrected 35-mers for predicting error correct \kmerstart 
- 	#system("perl computeTruesetFordifferentK.pl -kmerfile  -multires  -o ");
+ 	system("perl computeTruesetFordifferentK.pl -kmerfile $writefiles[3] -multires $dirname/MultiResCorrected.35  -o $outputfile");
 	print "Error correction completed successfully, results are stored in $outputfile\n";
 }
 
