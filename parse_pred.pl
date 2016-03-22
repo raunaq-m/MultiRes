@@ -3,6 +3,11 @@
 #Generate a file that contains the error-free k-mers and their counts using the counts file 
 #Also list the k-mers with counts greater than threshold
 
+if(scalar(@ARGV)<2)
+{
+	print "USAGE: perl parse_pred.pl errorFreeKmers Allkmers UpperThreshold > OutPutFile \n";
+	exit(0);
+}
 open(file,$ARGV[0]); # error-free k-mers
 while($l=<file>)
 {

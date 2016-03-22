@@ -63,6 +63,7 @@ sub main
 	
 	system("perl parse_pred.pl $dirname/errorcorrect.temp $writefiles[2] $upper_threshold > $outputfile");
 	# Use error-corrected 35-mers for predicting error correct \kmerstart 
+ 	#system("perl computeTruesetFordifferentK.pl -kmerfile  -multires  -o ");
 	print "Error correction completed successfully, results are stored in $outputfile\n";
 }
 
