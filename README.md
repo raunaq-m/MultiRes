@@ -1,6 +1,7 @@
 MultiRes: A frame based error correction module for detecting rare variants and removing sequencing errors from Next Generation Sequencing data
 The software has been tested for error removal and rare variant detection on Illumina sequencing data from viral populations. The list of files and tools to use for error correction are mentioned below. 
 
+A pre-print of the paper is available from http://arxiv.org/abs/1604.04803
 
 Usage Example: 
 For a fasta file : input.fasta
