@@ -20,26 +20,27 @@ from sklearn.lda import LDA
 from sklearn.qda import QDA
 from sklearn.externals import joblib
 
-names = [ "NearestNeighbor", 
+names = [ #"NearestNeighbor", 
 		#"LinearSVM",
 		#"RBFSVM",
 		"DecisionTree",
 		"RandomForest",
 		"AdaBoost",
-		"NaiveBayes",
-		"LDA",
-		"QDA"]
-			
+		#"NaiveBayes",
+		#"LDA",
+		#"QDA"]
+	]	
 classifiers = [
-		KNeighborsClassifier(5),
+		#KNeighborsClassifier(5),
 		#SVC(kernel="linear", C=0.025),
 		#SVC(gamma=2, C=1),
 		DecisionTreeClassifier(max_features="sqrt"),
 		RandomForestClassifier(n_estimators=20,max_features="sqrt"),
 		AdaBoostClassifier(),
-		GaussianNB(),
-		LDA(),
-		QDA()]
+		#GaussianNB(),
+		#LDA(),
+		#QDA()]
+		]
 
 data = np.loadtxt(sys.argv[1],dtype=np.int32)
 # load the data
@@ -48,7 +49,7 @@ y=data[:,0]
 #X=data[:,1:]
 #X=data[:,1:14]
 dRange=[1]+range(int(sys.argv[3]),int(sys.argv[4]))
-#print dRange
+print dRange
 X=data[:,dRange]
 #print X.shape
 
